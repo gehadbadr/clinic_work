@@ -43,10 +43,7 @@ class AppBarWibget extends StatelessWidget {
             actions: [
               IconButton(
                   onPressed: () {
-                    navigator!.push(
-                      MaterialPageRoute(
-                          builder: (_) => const NotificationPage()),
-                    );
+                    Get.toNamed(AppRoutes.notification);
                   },
                   icon: const Icon(
                     Icons.notifications_none_outlined,
@@ -93,7 +90,8 @@ class AppBarWibget extends StatelessWidget {
                         "Online pharmacies".tr,
                         style: TextStyle(
                             color: AppColors.primaryColor,
-                            fontSize:context.screenHeight < 700 ? 18.sp :22.sp,
+                            fontSize:
+                                context.screenHeight < 500 ? 18.sp : 22.sp,
                             fontWeight: FontWeight.w900),
                       ),
                     )
@@ -165,12 +163,15 @@ class AppBarWibget extends StatelessWidget {
                                           helperMaxLines: 1,
                                           errorMaxLines: 1,
                                           helperStyle: TextStyle(
-                                            fontSize: 14.sp,
-                                            fontFamily: "ArefRuqaa",
-                                            color:AppColors.secondryColor
-                                          ),
+                                              fontSize: 14.sp,
+                                              fontFamily: "ArefRuqaa",
+                                              color: AppColors.secondryColor),
                                           hintMaxLines: 1,
-                                          suffixIcon: Icon(Icons.search,color: AppColors.secondryColor,size:14.sp ,)),
+                                          suffixIcon: Icon(
+                                            Icons.search,
+                                            color: AppColors.secondryColor,
+                                            size: 16.sp,
+                                          )),
                                       controller: search,
                                     )),
                                 SizedBox(
@@ -186,10 +187,7 @@ class AppBarWibget extends StatelessWidget {
                               children: [
                                 InkWell(
                                     onTap: () {
-                                      navigator!.push(
-                                        MaterialPageRoute(
-                                            builder: (_) => const ChatPage()),
-                                      );
+                                      Get.toNamed(AppRoutes.chat);
                                     },
                                     child: SvgPicture.asset(
                                       color: currentIndex == 11 ||
@@ -200,11 +198,7 @@ class AppBarWibget extends StatelessWidget {
                                     )),
                                 IconButton(
                                     onPressed: () {
-                                      navigator!.push(
-                                        MaterialPageRoute(
-                                            builder: (_) =>
-                                                const NotificationPage()),
-                                      );
+                                      Get.toNamed(AppRoutes.notification);
                                     },
                                     icon: Icon(Icons.notifications_none,
                                         size: 30,

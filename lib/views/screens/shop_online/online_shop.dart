@@ -3,17 +3,13 @@ import 'package:clinic/views/widgets/online_shop/carditem_search.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:velocity_x/velocity_x.dart';
 
 import '../../../core/consts/colors.dart';
 import '../../../core/consts/images.dart';
-import '../../widgets/commponents/card_item.dart';
 
-import '../../widgets/commponents/card_item_search.dart';
 import '../../widgets/commponents/dialog.dart';
 import '../../widgets/commponents/filtter.dart';
 import '../../widgets/commponents/text_Form_Field.dart';
-import '../item_view/item_view.dart';
 
 class OnlineShop extends StatefulWidget {
   const OnlineShop({super.key});

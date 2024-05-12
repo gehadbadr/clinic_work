@@ -34,7 +34,7 @@ class ItemView extends StatelessWidget {
                 ),
                 Container(
                     padding: EdgeInsets.only(
-                        top: MediaQuery.of(context).size.height < 700
+                        top: MediaQuery.of(context).size.height < 500
                             ? 200.h
                             : 100.h,
                         left: 20,

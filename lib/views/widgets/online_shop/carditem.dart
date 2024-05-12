@@ -14,7 +14,7 @@ class _CardItemState extends State<CardItemSatnder> {
   @override
   Widget build(BuildContext context) {
          return SizedBox(
-      height: context.screenHeight < 700 ? 550.h : 270.h,
+      height: context.screenHeight < 500 ? 550.h : 270.h,
       child: ListView.builder(
         padding: EdgeInsetsDirectional.symmetric(horizontal: 10.w),
         scrollDirection: Axis.horizontal,

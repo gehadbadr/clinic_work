@@ -6,6 +6,7 @@ import 'package:clinic/views/screens/Home.dart';
 import 'package:clinic/views/screens/auth/forgetpassword.dart';
 import 'package:clinic/views/screens/auth/verifycodesignup.dart';
 import 'package:clinic/views/screens/cart/cart.screen.dart';
+import 'package:clinic/views/screens/chat/chat_page.dart';
 import 'package:clinic/views/screens/file/campany_file.dart';
 import 'package:clinic/views/screens/file/fileCategory.dart';
 import 'package:clinic/views/screens/auth/login.dart';
@@ -15,6 +16,7 @@ import 'package:clinic/views/screens/clinic/search/Search.screens.dart';
 import 'package:clinic/views/screens/file/person_file.dart';
 import 'package:clinic/views/screens/file/person_file2.dart';
 import 'package:clinic/views/screens/language/language.dart';
+import 'package:clinic/views/screens/notification/notification_page.dart';
 import 'package:clinic/views/screens/onBoarding/onBoarding.dart';
 import 'package:clinic/views/screens/products/product_details.screen.dart';
 import 'package:clinic/views/screens/products/products.screen.dart';
@@ -61,6 +63,10 @@ class AppRouter {
         name: AppRoutes.videoDetailsList, page: () => const VideoDetailsList()),
     GetPage(name: AppRoutes.searchScreen, page: () => const SearchWidget()),
     GetPage(name: AppRoutes.cart, page: () => const Cart()),
+    GetPage(name: AppRoutes.notification, page: () => const NotificationPage()),
+    GetPage(name: AppRoutes.chat, page: () => const ChatPage()),
+    
+    
     // GetPage(name: AppRoutes.introScreen, page: () => const IntroScreen()),
     // GetPage(name: AppRoutes.loginScreen, page: () => const LoginScreen()),
     // GetPage(name: AppRoutes.signupScreen, page: () => const SignupScreen()),
