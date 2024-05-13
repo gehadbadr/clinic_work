@@ -1,19 +1,24 @@
 import 'package:clinic/core/consts/consts.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 import '../../screens/item_view/item_view.dart';
 
 class CardItemSearch extends StatefulWidget {
-  const CardItemSearch({super.key});
+  final int id;
+  final bool isFavorite;
+
+  final Function()? favoriteChange;
+  const CardItemSearch({super.key, required this.id, required this.isFavorite, required this.favoriteChange});
+
 
   @override
   State<CardItemSearch> createState() => _CardItemSearchState();
 }
 
 class _CardItemSearchState extends State<CardItemSearch> {
-  bool isFavorite = false;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -32,17 +37,20 @@ class _CardItemSearchState extends State<CardItemSearch> {
       child: InkWell(
         borderRadius: BorderRadius.circular(20.r),
         onTap: () =>
-            Navigator.push(context, MaterialPageRoute(builder: (context) {
+        Get.to(()=>const ItemView())
+           /* Navigator.push(context, MaterialPageRoute(builder: (context) {
           return const ItemView();
-        })),
+        })*//*)*/,
         child: Row(children: [
           Container(
             height: 105,
             padding: const EdgeInsetsDirectional.all(15),
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.only(
-                    topRight: Radius.circular(20.r),
-                    bottomRight: Radius.circular(20.r)),
+                    topRight: Get.locale!.languageCode == "ar" ?Radius.circular(20.r):Radius.circular(0.r),
+                    bottomRight:Get.locale!.languageCode == "ar" ? Radius.circular(20.r):Radius.circular(0.r),
+                    topLeft: Get.locale!.languageCode == "ar" ?Radius.circular(0.r):Radius.circular(20.r),
+                    bottomLeft :Get.locale!.languageCode == "ar" ? Radius.circular(0.r):Radius.circular(20.r)),
                 color: AppColors.primaryColor,
                 boxShadow: const [
                   BoxShadow(
@@ -54,19 +62,15 @@ class _CardItemSearchState extends State<CardItemSearch> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                IconButton(
-                    onPressed: () {
-                      setState(() {});
-                      isFavorite = !isFavorite;
-                      print("sssssssssssss${isFavorite}");
-                    },
-                    icon: Icon(
-                      isFavorite == false
-                          ? Icons.favorite_border_outlined
-                          : Icons.favorite,
-                      color: isFavorite ? Colors.red : Colors.white,
-                      size: 25,
-                    )),
+              IconButton(
+              onPressed: widget.favoriteChange,
+              icon: Icon(
+                widget.isFavorite ?Icons.favorite
+                    : Icons.favorite_border_outlined
+                    ,
+                color: widget.isFavorite? Colors.red : Colors.black,
+                size: 25,
+              )),
                 InkWell(
                   borderRadius: BorderRadius.circular(25.r),
                   onTap: () {},
@@ -78,13 +82,14 @@ class _CardItemSearchState extends State<CardItemSearch> {
               ],
             ),
           ),
-          Padding(
+          Container(
             padding: const EdgeInsets.symmetric(
               horizontal: 15,
             ),
+            width: MediaQuery.of(context).size.width/2,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
-              crossAxisAlignment: CrossAxisAlignment.end,
+              crossAxisAlignment: Get.locale!.languageCode == "ar" ?CrossAxisAlignment.end:CrossAxisAlignment.start,
               children: [
                 const Text("Muli vitamins"),
                 Padding(

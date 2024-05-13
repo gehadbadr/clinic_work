@@ -18,7 +18,7 @@ class ItemView extends StatelessWidget {
           child: AppBarWibget(
             currentIndex: 12,
             onPressLeading: () {
-              Navigator.pop(context);
+             Get.back();
             },
             bgColor: AppColors.secondryColor,
           )),

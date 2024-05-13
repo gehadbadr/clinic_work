@@ -27,7 +27,7 @@ class MyTranslation extends Translations {
           "next": "التالي",
           "start": "ابدأ التطبيق",
           "skip": "تخطي",
-          "Welcome": "مرحبا",
+        //  "Welcome": "مرحبا",
           "signInSocail":
               "الدخول بواسطة الايميل وكلمة المرور او عن طريق وسائل الاتصال الاجتماعية",
           "name": "الاسم",
@@ -111,8 +111,9 @@ class MyTranslation extends Translations {
           "weight": "الوزن",
           "cm": "سم",
           "kg": "كجم",
+          'welcome': "أهلا و سهلا بيك" ,       
+           'filtering': 'تصفيات',
 
-          'filtering': 'تصفيات',
           'leastModels': 'احدث الموديلات',
           'shopping': 'تسوق الان',
           'specialCategories': 'اقسام مميزة',
@@ -177,6 +178,8 @@ class MyTranslation extends Translations {
           "removeFavoriteVideo": "تم حذف الفيديو من قائمتك بنجاح",
 "Muli vitamins":"Muli vitamins",
 "30 Tabs":"30 قرص",
+ "addFavoriteProduct": "تم اضافة المنتج في قائمتك بنجاح",
+          "removeFavoriteProduct": "تم حذف المنتج من قائمتك بنجاح",
           "settings": "الاعدادات",
           "recentlyViewed": "ما تم مشاهدته مؤخرًا",
           "about": "عنا",
@@ -244,7 +247,18 @@ class MyTranslation extends Translations {
           "PharmacyTime": 'من 10 ص الي 12 م',
           "PharmacyAddress": "25 ش ابن السراج متفرع من وينجت",
           "Al-Masry Store": 'متجر المصري للمستلزمات',
+          //map
+          "Close": "اغلق",
+          "GO": "انطلق",
+          "pickedAddress": 'ابحث عن أقرب طوارئ/دكتور/مستشفي لك',
+          "doctor": "دكتور",
+          "hospital": "مستشفي", 
+          "emregency": "طوارئ",
+          "technical support": "الدعم الفني",
+          "writeMsg": "أكتب رسالتك",
+          
 
+   
 //notification
           "Notifications": "الإشعارات",
           "today": "اليوم",
@@ -275,7 +289,7 @@ class MyTranslation extends Translations {
           "start": "Start App",
           "skip": "Skip",
           "continue": "Continue",
-          "Welcome": "Welcome Back",
+         // "Welcome": "Welcome Back",
           "signInSocail":
               "Sign In With Your Email And Password OR Continue With Social Media",
           "name": "Name",
@@ -332,7 +346,7 @@ class MyTranslation extends Translations {
           "loggedOut": "Logged out successfully ",
           "nameRequired": "Name is required",
           "ageRequired": "Age is required",
-          "heightRequired": "Height iheights required",
+          "heightRequired": "Height is required",
           "weightRequired": "Weight is required",
           "emergencytelRequired": "Mobile is required",
           "emailRequired": "Email is required",
@@ -375,6 +389,8 @@ class MyTranslation extends Translations {
           "removeFavoriteCourse": "Removed from your list",
           "addFavoriteVideo": "Added to your list",
           "removeFavoriteVideo": "Removed from your list",
+           "addFavoriteProduct": "Added to your list",
+          "removeFavoriteProduct": "Removed from your list",
           "filter": "Filter",
           "meals": "Meals",
           "breakfast": "breakfast",
@@ -425,6 +441,7 @@ class MyTranslation extends Translations {
           "sure": "Sure",
           "cancel": "Cancel",
           "success": "Success",
+          'welcome': "Welcome" ,       
 
           'filtering': 'filter',
           'leastModels': 'LeastModels',
@@ -518,6 +535,16 @@ class MyTranslation extends Translations {
           "PharmacyTime": 'from 10 am to 12 pm',
           "PharmacyAddress": "12 st wengat",
           "Al-Masry Store": "Al-Masry Store",
+          //map
+         "Close": "Close",
+          "GO": "GO",
+          "pickedAddress": 'Find the nearest emergency/doctor/hospital to you',
+          "doctor": "Doctor",
+          "hospital": "Hospital", 
+          "emregency": "Emergency",
+          "technical support": "Technical support",
+          "writeMsg": "Write your msessage",
+
 //notification
           "Notifications": "Notifications",
           "today": "today",

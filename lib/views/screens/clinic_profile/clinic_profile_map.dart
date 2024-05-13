@@ -1,6 +1,7 @@
 import 'package:clinic/core/consts/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 import '../../../core/consts/images.dart';
 import '../../widgets/commponents/custom_botton_icon_or_image.dart';
@@ -416,7 +417,7 @@ class ClinicProfileMap extends StatelessWidget {
                 color: AppColors.whiteColor,
                 size: 30.w,
               ),
-              onPressed: () => Navigator.pop(context),
+              onPressed: () => Get.back(),
             ),
           ),
         ]),

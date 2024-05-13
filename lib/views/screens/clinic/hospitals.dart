@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 // ignore: unnecessary_import
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:screenshot/screenshot.dart';
@@ -152,8 +153,8 @@ class _HospitalsState extends State<Hospitals> {
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
         actions: <Widget>[
           ElevatedButton(
-            onPressed: () => Navigator.of(context).pop(),
-            child: const Text('Close'),
+            onPressed: () => Get.back(),
+            child:  Text('Close'.tr),
           ),
           ElevatedButton(
             onPressed: () {
@@ -169,7 +170,7 @@ class _HospitalsState extends State<Hospitals> {
                         builder: (context) => const ClinicProfileMap2()));
               }
             },
-            child: const Text('GO'),
+            child:  Text('GO'.tr),
           ),
         ],
       ),
@@ -202,7 +203,7 @@ class _HospitalsState extends State<Hospitals> {
             padding: const EdgeInsets.all(15.0),
             child: SearchLocationWidget(
               mapController: _mapController,
-              pickedAddress: 'ابحث عن أقرب طوارئ/دكتور/مستشفي لك',
+              pickedAddress: "pickedAddress".tr,
               isEnabled: null,
               fromDialog: false,
               hint: 'l,ru;',
@@ -213,7 +214,7 @@ class _HospitalsState extends State<Hospitals> {
             left: 50,
             child: Container(
               height: 110,
-              width: 200,
+              width: Get.locale!.languageCode == "ar" ? 200:250,
               decoration: BoxDecoration(
                   color: Colors.white.withOpacity(.5),
                   borderRadius: BorderRadius.circular(16),
@@ -245,7 +246,7 @@ class _HospitalsState extends State<Hospitals> {
                                 await addMarket();
                               },
                             ),
-                            const Text('دكتور')
+                             Text('doctor'.tr)
                           ],
                         ),
                         Row(
@@ -262,7 +263,7 @@ class _HospitalsState extends State<Hospitals> {
                                 await addMarketHospital();
                               },
                             ),
-                            const Text('مستشفي')
+                             Text('hospital'.tr)
                           ],
                         ),
                       ],
@@ -282,7 +283,7 @@ class _HospitalsState extends State<Hospitals> {
                                 });
                               },
                             ),
-                            const Text('طوارئ')
+                             Text('emregency'.tr)
                           ],
                         )
                       ],

@@ -33,8 +33,8 @@ class AppBarWibget extends StatelessWidget {
             leadingWidth: 0,
             leading: const SizedBox(),
             backgroundColor: AppColors.primaryColor,
-            title: const Text(
-              "أهلا و سهلا بيك",
+            title:  Text(
+              "welcome".tr,
               style: TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.w900,

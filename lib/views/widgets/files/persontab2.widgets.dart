@@ -2,6 +2,7 @@
 
 import 'package:clinic/controller/files/person_file.controller.dart';
 import 'package:clinic/core/consts/consts.dart';
+import 'package:clinic/views/widgets/auth/custom_button.auth.dart';
 import 'package:clinic/views/widgets/auth/custom_texttitle.auth.dart';
 import 'package:clinic/views/widgets/files/custom_textfield.widgets.dart';
 import 'package:clinic/views/widgets/files/drop_down_blood.dart';
@@ -15,10 +16,10 @@ class PersonTabTwo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(vertical: 15),
+      padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
       child: Form(
-        key: controller.tabTwo,
-        child: Column(children: [
+          key: controller.tabTwo,
+        child: ListView(children: [
           Row(
             children: [
               CustomTextTitle(
@@ -38,16 +39,12 @@ class PersonTabTwo extends StatelessWidget {
             ],
           ),
           SizedBox(height: 20.h),
-          Row(
-            children: [
-              Text(
-                "bloodcat".tr,
-                style: TextStyle(
-                    color: AppColors.primaryColor,
-                    fontSize: 18.sp,
-                    fontWeight: FontWeight.w600),
-              ),
-            ],
+          Text(
+            "bloodcat".tr,
+            style: TextStyle(
+                color: AppColors.primaryColor,
+                fontSize: 18.sp,
+                fontWeight: FontWeight.w600),
           ),
           SizedBox(height: 5.h),
 
@@ -202,7 +199,7 @@ class PersonTabTwo extends StatelessWidget {
             children: [
               InkWell(
                 onTap: () {
-                  controller.goToHomePage();
+                 controller.back();
                 },
                 child: Container(
                   height: 30.h,
@@ -247,20 +244,20 @@ class PersonTabTwo extends StatelessWidget {
             ],
           ),
 
-          // Row(
-          //   mainAxisAlignment: MainAxisAlignment.center,
-          //   children: [
-          //     SizedBox(
-          //       width: MediaQuery.of(context).size.width / 2.8,
-          //       child: CustomButtomAuth(
-          //           text: "sure".tr,
-          //           onPressed: () {
-          //             controller.goToHomePage();
-          //           }),
-          //     ),
-          //   ],
-          // ),
-          // SizedBox(height: 20.h),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              SizedBox(
+                width: MediaQuery.of(context).size.width / 2.8,
+                child: CustomButtomAuth(
+                    text: "sure".tr,
+                    onPressed: () {
+                      controller.next();
+                    }),
+              ),
+            ],
+          ),
+          SizedBox(height: 20.h),
         ]),
       ),
     );

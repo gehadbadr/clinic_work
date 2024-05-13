@@ -7,14 +7,18 @@ import '../../../core/consts/images.dart';
 import '../../screens/item_view/item_view.dart';
 
 class CardItem extends StatefulWidget {
-  const CardItem({super.key});
+  final int id;
+  final bool isFavorite;
+
+  final Function()? favoriteChange;
+  const CardItem({super.key, required this.id, required this.isFavorite, required this.favoriteChange});
 
   @override
   State<CardItem> createState() => _CardItemState();
 }
 
 class _CardItemState extends State<CardItem> {
-  bool isFavorite = false;
+ // bool isFavorite = false;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -28,9 +32,10 @@ class _CardItemState extends State<CardItem> {
           borderRadius: BorderRadius.circular(20).r),
       child: InkWell(
         onTap: () =>
-            Navigator.push(context, MaterialPageRoute(builder: (context) {
-          return const ItemView();
-        })),
+        //     Navigator.push(context, MaterialPageRoute(builder: (context) {
+        //   return const ItemView();
+        // }))
+         Get.to(()=>const ItemView()),
         child: Stack(children: [
           Column(children: [
             Image.asset(
@@ -106,16 +111,12 @@ class _CardItemState extends State<CardItem> {
             )
           ]),
           IconButton(
-              onPressed: () {
-                setState(() {});
-                isFavorite = !isFavorite;
-                print("sssssssssssss${isFavorite}");
-              },
+              onPressed: widget.favoriteChange,
               icon: Icon(
-                isFavorite == false
-                    ? Icons.favorite_border_outlined
-                    : Icons.favorite,
-                color: isFavorite ? Colors.red : Colors.black,
+                widget.isFavorite ?Icons.favorite
+                    : Icons.favorite_border_outlined
+                    ,
+                color: widget.isFavorite? Colors.red : Colors.black,
                 size: 25,
               )),
         ]),

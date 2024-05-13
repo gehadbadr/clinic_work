@@ -1,4 +1,5 @@
 import 'package:clinic/core/consts/consts.dart';
+import 'package:clinic/views/widgets/appBarSimple.widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -13,31 +14,35 @@ class ChatPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(kToolbarHeight),
+        child:AppBarSimpleWibget(onPressLeading: () => Get.back(),bgColor:Theme.of(context).scaffoldBackgroundColor)
+        ),
       body: SafeArea(
         child: Column(children: [
           SizedBox(
            height: 25.h,
           ),
-          Row(
-            children: [
-              const Expanded(child: SizedBox()),
-              IconButton(
-                  onPressed: () {
-                    Get.back();
-                  },
-                  icon: Icon(
-                    Icons.arrow_right_alt,
-                    size: 30.w,
-                  ))
-            ],
-          ),
+          // Row(
+          //   children: [
+          //     const Expanded(child: SizedBox()),
+          //     IconButton(
+          //         onPressed: () {
+          //           Get.back();
+          //         },
+          //         icon: Icon(
+          //           Icons.arrow_right_alt,
+          //           size: 30.w,
+          //         ))
+          //   ],
+          // ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Padding(
                 padding: EdgeInsetsDirectional.only(bottom: 10.h, end: 10.w),
                 child: Text(
-                  "الدعم الفني",
+                  "technical support".tr,
                   style: TextStyle(
                     fontSize: 20.sp,
                     fontWeight: FontWeight.w900,
@@ -138,7 +143,7 @@ class ChatPage extends StatelessWidget {
                   colorFont: Colors.white,
                   radius: 10,
                   controller: TextEditingController(),
-                  hint: "أكتب رسالتك",
+                  hint: "writeMsg".tr,
                 ),
               ),
             ],

@@ -31,9 +31,11 @@ Widget iconText({
         SizedBox(
           width: 10.w,
         ),
-        Text(
-          text,
-          style: TextStyle(fontSize: 14.sp, fontWeight: FontWeight.w600),
+        Expanded(
+          child: Text(
+            text,
+            style: TextStyle(fontSize: 14.sp, fontWeight: FontWeight.w600),
+          ),
         ),
       ]),
     ),

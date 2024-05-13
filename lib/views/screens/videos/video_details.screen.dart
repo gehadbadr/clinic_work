@@ -2,7 +2,9 @@ import 'package:clinic/controller/videos/videos_controller.dart';
 import 'package:clinic/core/consts/consts.dart';
 import 'package:clinic/views/widgets/appBar.widgets.dart';
 import 'package:clinic/views/widgets/customButton.widgets.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:velocity_x/velocity_x.dart';
@@ -28,12 +30,14 @@ class VideoDetails extends StatelessWidget {
               height: 5.h,
             ),
             Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-              Text("  ${'specialcourse'.tr} ${'title1'.tr}",
-                  style: TextStyle(
-                      fontFamily: "ArefRuqaa",
-                      fontSize:
-                          Get.locale!.languageCode == "ar" ? 20.sp : 16.sp,
-                      color: AppColors.blackColor)),
+              Flexible(
+                child: Text("  ${'specialcourse'.tr} ${'title1'.tr}",
+                    style: TextStyle(
+                        fontFamily: "ArefRuqaa",
+                        fontSize:
+                            Get.locale!.languageCode == "ar" ? 20.sp : 16.sp,
+                        color: AppColors.blackColor)),
+              ),
               SizedBox(
                 width: 10.w,
               ),

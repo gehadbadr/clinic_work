@@ -1,3 +1,4 @@
+import 'package:clinic/controller/online_shop/online_shope_controller.dart';
 import 'package:clinic/views/widgets/online_shop/carditem.dart';
 import 'package:clinic/views/widgets/online_shop/carditem_search.dart';
 import 'package:flutter/material.dart';
@@ -19,8 +20,8 @@ class OnlineShop extends StatefulWidget {
 }
 
 class _OnlineShopState extends State<OnlineShop> {
-  TextEditingController search = TextEditingController();
-  Widget? now;
+  // TextEditingController search = TextEditingController();
+  // Widget? now;
   // Widget stander(BuildContext context) {
   //   return SizedBox(
   //     height: context.screenHeight < 700 ? 400.h : 270.h,
@@ -51,21 +52,15 @@ class _OnlineShopState extends State<OnlineShop> {
   //   );
   // }
 
-  @override
-  void initState() {
-    //  now = stander(context);
-    now = CardItemSatnder();
-    super.initState();
-  }
+ 
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
-      child: Scaffold(
-        backgroundColor: Colors.white,
-        body: SingleChildScrollView(
-          child: Column(
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: SingleChildScrollView(
+        child: GetBuilder<OnlineShopControllerImp>(builder: (controller) {
+          return Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Row(
@@ -75,17 +70,9 @@ class _OnlineShopState extends State<OnlineShop> {
                     width: MediaQuery.of(context).size.width * 0.7,
                     height: 50.h,
                     child: DefaultFormField(
-                      controller: search,
+                      controller: controller.search,
                       onChanged: (v) {
-                        setState(() {
-                          if (search.text.isEmpty) {
-                            now = CardItemSatnder();
-                          } else if (search.text.trim().isEmpty) {
-                            now = const SizedBox();
-                          } else {
-                            now = CardItemSatnder2();
-                          }
-                        });
+                        controller.onChanged();
                       },
                       fillColor: Colors.white,
                       radius: 20.r,
@@ -133,10 +120,10 @@ class _OnlineShopState extends State<OnlineShop> {
                   ),
                 ),
               ),
-              now!,
+              controller.now!,
             ],
-          ),
-        ),
+          );
+        }),
       ),
     );
   }
