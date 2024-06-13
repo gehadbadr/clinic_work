@@ -30,7 +30,7 @@ class ForgetPasswordControllerImp extends ForgetPasswordController {
 
   @override
   goToVerfiyCode() {
-    Get.offNamed(AppRoutes.verfiyCodeScreen);
+    Get.toNamed(AppRoutes.verfiyCodeResetPasswordScreen);
   }
 
   @override

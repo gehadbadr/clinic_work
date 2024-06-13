@@ -4,6 +4,8 @@ import 'package:clinic/core/consts/consts.dart';
 import 'package:clinic/core/middleware/mymiddleware.dart';
 import 'package:clinic/views/screens/Home.dart';
 import 'package:clinic/views/screens/auth/forgetpassword.dart';
+import 'package:clinic/views/screens/auth/resetpassword.dart';
+import 'package:clinic/views/screens/auth/verifycodeResetPassword.dart';
 import 'package:clinic/views/screens/auth/verifycodesignup.dart';
 import 'package:clinic/views/screens/cart/cart.screen.dart';
 import 'package:clinic/views/screens/chat/chat_page.dart';
@@ -29,7 +31,7 @@ import 'package:get/get_navigation/src/routes/get_route.dart';
 class AppRouter {
   static List<GetPage<dynamic>>? routes = [
     GetPage(
-        name: "/", page: () =>  const Language(), middlewares: [MyMiddleWare()]),
+        name: "/", page: () =>   SplashScreen(), middlewares: [MyMiddleWare()]),
     // static List<GetPage<dynamic>>? routes = [
     //   GetPage(
     //       name: "/",
@@ -44,9 +46,13 @@ class AppRouter {
     GetPage(name: AppRoutes.signupScreen, page: () => const SignUp()),
     GetPage(name: AppRoutes.loginScreen, page: () => const Login()),
     GetPage(name: AppRoutes.forgetScreen, page: () => const ForgetPassword()),
+    GetPage(name: AppRoutes.resetpasswordScreen, page: () => const ResetPassword()),
     GetPage(
         name: AppRoutes.verfiyCodeSignUpScreen,
         page: () => const VerifyCodeSignup()),
+           GetPage(
+        name: AppRoutes.verfiyCodeResetPasswordScreen,
+        page: () => const VerifyCodeResetPassword()),
 
     GetPage(name: AppRoutes.fileCategory, page: () => const FileCategory()),
     GetPage(name: AppRoutes.companyFile, page: () => const CompanyFile()),

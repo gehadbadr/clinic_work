@@ -46,6 +46,7 @@ class MyTranslation extends Translations {
           "male": "ذكر",
           "female": "انثي",
           "forgetPass": " نسيت كلمة السر ",
+          "resetPass": "  تعيين كلمة السر جديدة",
           "login": " الدخول",
           "skiplogin": " تخطي تسجيل الدخول",
           "signup": "انشاء حساب",
@@ -62,7 +63,8 @@ class MyTranslation extends Translations {
           "verfiyCodeBody":
               "سوف نقوم بإرسال رسالة نصية لك لإعادة تحديث كلمة السر.",
           "resendVerfiyCode": "هل لم يتم إرسال رسالة؟ إعادة إرسالها",
-          "registeredSuccessfully": "قمت بالتسجيل بنجاح ",
+          "registeredSuccessfully": " لقد تم التسجيل بنجاح ",
+          "resetPasswordSuccessfully": " لقد تم تغيير كلمة السر بنجاح ",
           "errorRepassword": "اعادة كلمة المرور غير مطابقة",
           "errorAgree": "You have to agree",
           "invalidEmail": "يرجى إدخال البريد الإلكتروني بشكل صحيح",
@@ -309,6 +311,8 @@ class MyTranslation extends Translations {
           "male": "Male",
           "female": "Female",
           "forgetPass": "Forget Password ",
+                    "resetPass":"Forget Password ",
+
           "login": "Sign In",
           "skiplogin": "skip login",
 
@@ -329,6 +333,7 @@ class MyTranslation extends Translations {
               "We will send you a message to reset your password. ",
           "alreadyHaveAccount": "Already have an account ? ",
           "registeredSuccessfully": "you register successfully ",
+          "resetPasswordSuccessfully": "The password has been changed successfully",
           "errorRepassword": "Confirm password is not correct",
           "errorAgree": "You have to agree",
           "invalidEmail": "Please enter a valid email",

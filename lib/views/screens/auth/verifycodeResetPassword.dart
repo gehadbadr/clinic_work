@@ -1,4 +1,5 @@
 import 'package:clinic/controller/auth/verfiycodesignup_controller.dart';
+import 'package:clinic/controller/auth/verifycodeResetPassword.controller.dart';
 import 'package:clinic/core/consts/consts.dart';
 import 'package:clinic/views/widgets/appBarSimple.widgets.dart';
 import 'package:clinic/views/widgets/auth/custom_texttitle.auth.dart';
@@ -7,8 +8,8 @@ import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
-class VerifyCodeSignup extends StatelessWidget {
-  const VerifyCodeSignup({super.key});
+class VerifyCodeResetPassword extends StatelessWidget {
+  const VerifyCodeResetPassword({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +21,7 @@ class VerifyCodeSignup extends StatelessWidget {
               onPressLeading: () => Get.back(),
             )),
         body: SafeArea(child:
-            GetBuilder<VerifyCodeSignUpControllerImp>(builder: (controller) {
+            GetBuilder<VerifyCodeResetPasswordControllerImp>(builder: (controller) {
           return Container(
             padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 30),
             child: Form(
@@ -72,7 +73,7 @@ class VerifyCodeSignup extends StatelessWidget {
                   showFieldAsBox: true,
                   onCodeChanged: (String code) {},
                   onSubmit: (String verificationCode) {
-                    controller.goToSuccessSignUp(context);
+                    controller.goToResetPassword();
                   }, // end onSubmit
                 ),
                 SizedBox(height: 30.h),
@@ -82,7 +83,7 @@ class VerifyCodeSignup extends StatelessWidget {
                     Obx(() => InkWell(
                           onTap: () {
                             if (controller.remainingTime == 0) {
-                              controller.goToSignUp();
+                              controller.goToResetPassword();
                             } else {
                               ScaffoldMessenger.of(context)
                                   .showSnackBar(SnackBar(
